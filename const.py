@@ -10,3 +10,4 @@ HEADERS = {
     "x-api-version": "2.0.0",
     "x-client-version": "2.3.20"
 }
+DOMAIN = "hass-flatastic"
