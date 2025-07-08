@@ -1,0 +1,10 @@
+{
+  "domain": "hass-flatastic",
+  "name": "HASS Flatastic Integration",
+  "version": "1.0.0",
+  "documentation": "https://github.com/avidoni/hass-flatastic",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@avidoni"]
+}
+
