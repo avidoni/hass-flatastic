@@ -1,0 +1,1 @@
+Homeassistant Flatastic Integration. Work in progress.
