@@ -45,7 +45,7 @@ Creates a **to-do list** entity synced with your Flatastic shopping list. You ca
 
 ### 2. Get Your API Key
 1. Log into [Flatastic WebApp](https://www.flatastic-app.com/webapp/)
-2. Open **Developer Tools → Network tab**
+2. In you browser, right click and open **Developer Tools → Network tab**
 3. Reload the page and find a request with the header `x-api-key`
 4. Copy the value of `x-api-key`
 
@@ -56,26 +56,26 @@ Add the following to your `configuration.yaml`:
 ```yaml
 sensor:
   - platform: hass-flatastic
-    api_key: "yourAPIkey"
+    api_key: "your-x-api-key"
 
 todo:
   - platform: hass-flatastic
-    api_key: "yourAPIkey"
+    api_key: "your-x-api-key"
 ````
 
 Restart Home Assistant after saving the file.
 
 ---
 
-## 🔒 No Premium Required
+## 🔒 No Premium features used
 
-This integration works with the free version of Flatastic. No premium features are used.
+This integration only uses features available in the free version of Flatastic because I do not have a subscription.
 
 ---
 
 ## 🙏 Credits
 
-Inspired by:
+Inspired by and in some regard using code by:
 
 * [MMM-flatastic](https://github.com/joschi27/MMM-flatastic)
 * [Robin Glauser’s dashboard project](https://www.robinglauser.ch/blog/2021/03/27/building-a-dashboard-in-a-pictureframe-for-my-flat/)
@@ -84,5 +84,7 @@ Inspired by:
 
 ## 📎 License
 
-MIT License – Free to use, modify, and contribute.
+MIT License – Free to use, modify, contribute
+
+This is my first integration. If you have some inputs, let me know! Remember that I am no professional and am doing this in my free time.
 
