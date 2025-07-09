@@ -56,11 +56,11 @@ Add the following to your `configuration.yaml`:
 
 ```yaml
 sensor:
-  - platform: hass-flatastic
+  - platform: flatastic
     api_key: "your-x-api-key"
 
 todo:
-  - platform: hass-flatastic
+  - platform: flatastic
     api_key: "your-x-api-key"
 ````
 
