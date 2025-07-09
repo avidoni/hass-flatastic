@@ -6,6 +6,7 @@ from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from .flatastic_api import FlatasticDataFetcher
 
+
 _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
@@ -45,9 +46,34 @@ class FlatasticUserSensor(Entity):
     def unique_id(self):
         return f"flatastic_user_{self._user['id']}"
 
+    
     @property
     def state(self):
-        return f"{self._user['firstName']}'s Status"
+        user_id = str(self._user["id"])
+        now = datetime.now()
+
+        # Get tasks assigned to this user
+        user_tasks = [t for t in self._data_fetcher.tasks if str(t.get("currentUser")) == user_id]
+
+        # Count overdue tasks
+        overdue_count = 0
+        for task in user_tasks:
+            rotation_time = int(task.get("rotationTime", 0))
+            last_done = int(task.get("lastDoneDate", 0))
+
+            if rotation_time == -1:
+                continue
+
+            next_due = last_done + rotation_time
+            if now.timestamp() > next_due:
+                overdue_count += 1
+
+        if overdue_count == 0:
+            return "No overdue tasks"
+        elif overdue_count == 1:
+            return "1 overdue task"
+        else:
+            return f"{overdue_count} overdue tasks"
 
     @property
     def extra_state_attributes(self):
