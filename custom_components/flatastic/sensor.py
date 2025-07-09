@@ -39,6 +39,10 @@ class FlatasticUserSensor(Entity):
         self._state = None
 
     @property
+    def icon(self):
+        return "mdi:account"
+
+    @property
     def name(self):
         return self._name
 
@@ -107,6 +111,10 @@ class FlatasticTaskSensor(Entity):
         self._name = f"Flatastic {self._task.get('title', 'Unknown')}"
         self._state = None
         self._attributes = {}
+
+    @property
+    def icon(self):
+        return "mdi:clipboard-check"
 
     @property
     def name(self):

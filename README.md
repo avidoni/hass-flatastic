@@ -1,4 +1,5 @@
-<img src="https://raw.githubusercontent.com/avidoni/hass-flatastic/main/images/flatastic.png" alt="Flatastic Integration Logo" title="Flatastic" align="right" height="60" />
+<img src="https://raw.githubusercontent.com/avidoni/hass-flatastic/main/images/flatastic.png" alt="Flatastic Integration Logo" title="Flatastic" align="right" height="70" />
+
 
 # Home Assistant Flatastic Integration
 
@@ -50,7 +51,7 @@ Creates a **to-do list** entity synced with your Flatastic shopping list. You ca
 ## Installation
 
 ### 1. Add Repository via HACS
-1. You should find it by searchin "Flatastic"
+1. You should find it by searching "Flatastic" in the Home Assistant Community Store
 2. Click the install button!
 3. If you want to, already reboot Homeassistant, or go to the next step
 
