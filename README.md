@@ -24,7 +24,7 @@ Creates one **sensor per chore** with attributes:
 - **Next person** – Who is responsible next
 - **Due date** – Date in a format usable for automations
 - **Overdue** – Boolean flag indicating whether the chore is overdue
-- **Rotation Time** - Days until the task repeats
+- **Periodicity** - Days until the task repeats
 - **Points** – How many points the chore is worth
 
 ### Grocery List (To-Do Entity)
