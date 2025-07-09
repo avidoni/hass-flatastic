@@ -44,8 +44,8 @@ class FlatasticDataFetcher:
             return []
 
     async def update_all(self):
-        wg_info = await self._fetch("wg_info")
-        self.users = wg_info.get("flatmates", [])
+        self.wg_info = await self._fetch("wg_info")
+        self.users = self.wg_info.get("flatmates", [])
         self.tasks = await self._fetch("task_list")
         self.cashflow = await self._fetch("cashflow")
         self.statistics = await self._fetch("cashflow_statistics")
@@ -92,8 +92,9 @@ class FlatasticDataFetcher:
         return None
 
     def get_user_by_id(self, user_id):
-        return next((u for u in self.users if u["id"] == str(user_id)), None)
-
+        user_id_str = str(user_id)
+        return next((u for u in self.users if str(u["id"]) == user_id_str), None)
+    
     def get_high_scores(self):
         return sorted(
             [(u["firstName"], int(u.get("chorePoints", 0))) for u in self.users],
