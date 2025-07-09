@@ -139,6 +139,8 @@ class FlatasticTaskSensor(Entity):
             self._attributes = {
                 "title": task.get("title"),
                 "next_person": next_person,
+                "overdue": False,
+                "rotation_time": None,
                 "points": int(task.get("points", 0)),
             }
         else:
