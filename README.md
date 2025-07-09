@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/avidoni/hass-flatastic/main/images/flatastic.png" alt="Flatastic Integration Logo" title="Flatastic" align="right" height="80" />
-
-
+<div style="float: right; height: 80px; margin-left: 10px;">
+  <img src="https://raw.githubusercontent.com/avidoni/hass-flatastic/main/images/flatastic.png" alt="Flatastic Integration Logo" title="Flatastic" height="80" />
+</div>
 
 # Home Assistant Flatastic Integration
 
