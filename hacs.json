@@ -1,6 +1,6 @@
 {
   "name": "HASS Flatastic Integration",
-  "domain": "hass-flatastic",
+  "domain": "flatastic",
   "country": "CH",
   "codeowners": ["@avidoni"],
   "homeassistant": "2025.7.1",
