@@ -40,9 +40,11 @@ Creates a **to-do list** entity synced with your Flatastic shopping list. You ca
 ## Installation
 
 ### 1. Add Repository via HACS
-1. Go to HACS → Integrations → Menu (⋮) → **Custom repositories**
-2. Add this repository URL and select **Integration**
-3. Install the integration
+1. You should find it by searchin "Flatastic"
+2. Click the install button!
+3. If you want to, already reboot Homeassistant, or go to the next step
+
+
 
 ### 2. Get Your API Key
 1. Log into [Flatastic WebApp](https://www.flatastic-app.com/webapp/)
@@ -64,8 +66,7 @@ todo:
     api_key: "your-x-api-key"
 ````
 
-Restart Home Assistant after saving the file.
-
+** Restart Home Assistant after saving the file.!!! **
 ---
 
 ## No Premium features used
