@@ -3,7 +3,7 @@
   "domain": "flatastic",
   "country": "CH",
   "codeowners": ["@avidoni"],
-  "homeassistant": "2025.7.1",
+  "homeassistant": "2025.1.1",
   "persistent_directory": false,
   "version": "1.0.0"
 }
