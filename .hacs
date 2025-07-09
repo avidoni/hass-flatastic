@@ -1,9 +1,0 @@
-{
-  "name": "HASS Flatastic",
-  "content_in_root": false,
-  "domain": "hass-flatastic",
-  "country": "all",
-  "homeassistant": "2025.7.1",
-  "persistent_directory": "custom_components",
-  "render_readme": true
-}
