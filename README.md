@@ -2,6 +2,11 @@
 
 # Home Assistant Flatastic Integration
 
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
+[![GitHub Release](https://img.shields.io/github/v/release/antontanderup/mediocre-hass-media-player-cards?color=blue)](https://github.com/avidoni/hass-flatastic/releases)
+[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/avidoni/hass-flatastic/total)](https://github.com/avidoni/hass-flatastic/releases)
+
+
 This custom integration connects the beloved german WG app [Flatastic](https://www.flatastic-app.com/) with [Home Assistant](https://www.home-assistant.io/). 
 
 It displays some components of Flatastic as Sensors in Homeassistant and synchs the grocery list as a Todo!
