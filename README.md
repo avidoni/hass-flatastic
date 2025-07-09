@@ -13,10 +13,10 @@ It displays some components of Flatastic as Sensors in Homeassistant and synchs 
 ### User Sensors
 
 Creates one **sensor per user** with the attributes:
-- **ChorePoints** – Total points earned from completed chores
+- **Chore Points** – Total points earned from completed chores
 - **Balance** – Money owed or owing
-- **AssignedTasks** – Tasks currently assigned to the user
-- **RecentCashflow** – Most recent payments or contributions
+- **Assigned Tasks** – Tasks currently assigned to the user
+- **Recent Cashflow** – Most recent payments or contributions
 
 ### Chore Sensors
 
