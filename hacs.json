@@ -4,5 +4,6 @@
   "country": "CH",
   "codeowners": ["@avidoni"],
   "homeassistant": "2025.7.1",
-  "persistent_directory": false
+  "persistent_directory": false,
+  "version": "1.0.0"
 }
