@@ -24,7 +24,8 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         sensors.append(FlatasticTaskSensor(task, data_fetcher))
 
     sensors.append(FlatasticGenericSensor("Recent Cashflow", lambda: data_fetcher.get_recent_cashflow()))
-    # sensors.append(FlatasticGenericSensor("shopping_list", lambda: data_fetcher.get_shopping_list(include_data=True)))
+    # sensors.append(FlatasticGenericSensor("Shopping List", lambda: data_fetcher.get_shopping_list()))
+    # sensors.append(FlatasticGenericSensor("Cashflow Statistics", lambda: data_fetcher.get_cashflow_statistics()))
 
     async_add_entities(sensors, True)
 
@@ -33,7 +34,7 @@ class FlatasticUserSensor(Entity):
     def __init__(self, user_data, data_fetcher):
         self._user = user_data
         self._data_fetcher = data_fetcher
-        self._name = f"{self._user['firstName']}"
+        self._name = f"User {self._user['firstName']}"
         self._state = None
 
     @property
@@ -50,20 +51,21 @@ class FlatasticUserSensor(Entity):
 
     @property
     def extra_state_attributes(self):
+        currency = self._data_fetcher.currency
         user_id = str(self._user["id"])
         tasks = [t for t in self._data_fetcher.tasks if str(t.get("currentUser")) == user_id]
         task_titles = [t["title"] for t in tasks]
 
         user_paid_flows = [f for f in self._data_fetcher.cashflow if str(f.get("paidBy")) == user_id]
         recent_flows = sorted(user_paid_flows, key=lambda f: f.get("date", 0), reverse=True)[:3]
-        flow_info = [f"{f['name']}: {f['totalSum']} CHF" for f in recent_flows]
+        flow_info = [f"{f['name']}: {f['totalSum']} {currency}" for f in recent_flows]
 
         balance_entry = next((s for s in self._data_fetcher.statistics if str(s["id"]) == user_id), {})
         balance = balance_entry.get("balance", 0.0)
 
         return {
             "chorePoints": self._user.get("chorePoints", 0),
-            "balance": f"{balance:.2f} CHF",
+            "balance": f"{balance:.2f} {currency}",
             "assignedTasks": task_titles,
             "recentCashflow": flow_info,
         }
@@ -103,6 +105,8 @@ class FlatasticTaskSensor(Entity):
 
         rotation_time = int(task.get("rotationTime", 0))
         last_done = int(task.get("lastDoneDate", 0))
+        rotation_time_days = round(rotation_time / 86400, 2) if rotation_time > 0 else None
+
 
         if rotation_time == -1:
             self._state = "If needed"
@@ -121,6 +125,7 @@ class FlatasticTaskSensor(Entity):
                 "next_person": next_person,
                 "due_date": due_date.isoformat(),
                 "overdue": overdue,
+                "rotation_time": rotation_time_days,
                 "points": int(task.get("points", 0)),
             }
 

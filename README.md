@@ -1,42 +1,43 @@
 
-# 🏡 Home Assistant Flatastic Integration
+# Home Assistant Flatastic Integration
 
-This custom integration connects your [Flatastic](https://www.flatastic-app.com/) shared living group with [Home Assistant](https://www.home-assistant.io/). 
+This custom integration connects the beloved german WG app [Flatastic](https://www.flatastic-app.com/) with [Home Assistant](https://www.home-assistant.io/). 
 
-It brings real-time data from Flatastic into Home Assistant and allows interaction with chores and the shopping list.
+It displays some components of Flatastic as Sensors in Homeassistant and synchs the grocery list as a Todo!
 
 ---
 
-## ✨ Features
+## Features
 
-### 👤 User Sensors
+### User Sensors
 
-Creates one **sensor per user** with the following attributes:
+Creates one **sensor per user** with the attributes:
 - **ChorePoints** – Total points earned from completed chores
 - **Balance** – Money owed or owing
 - **AssignedTasks** – Tasks currently assigned to the user
 - **RecentCashflow** – Most recent payments or contributions
 
-### 🧹 Chore Sensors
+### Chore Sensors
 
 Creates one **sensor per chore** with attributes:
-- **Title** – Name of the chore (e.g. `Papiersammlung`)
+- **Title** – Name of the chore
 - **Next person** – Who is responsible next
 - **Due date** – Date in a format usable for automations
 - **Overdue** – Boolean flag indicating whether the chore is overdue
+- **Rotation Time** - Days until the task repeats
 - **Points** – How many points the chore is worth
 
-### 🛒 Grocery List (To-Do Entity)
+### Grocery List (To-Do Entity)
 
 Creates a **to-do list** entity synced with your Flatastic shopping list. You can:
-- ✅ Display items
-- ➕ Add new items
-- ❌ Delete items
-- 🔄 Toggle items as bought/unbought
+- Display items
+- Add new items
+- Delete items
+- Toggle items as bought/unbought
 
 ---
 
-## 🛠 Installation
+## Installation
 
 ### 1. Add Repository via HACS
 1. Go to HACS → Integrations → Menu (⋮) → **Custom repositories**
@@ -46,7 +47,7 @@ Creates a **to-do list** entity synced with your Flatastic shopping list. You ca
 ### 2. Get Your API Key
 1. Log into [Flatastic WebApp](https://www.flatastic-app.com/webapp/)
 2. In you browser, right click and open **Developer Tools → Network tab**
-3. Reload the page and find a request with the header `x-api-key`
+3. Push some buttons on the web app until you see a request going through that includes the header `x-api-key`
 4. Copy the value of `x-api-key`
 
 ### 3. Configure Home Assistant
@@ -64,16 +65,17 @@ todo:
 ````
 
 Restart Home Assistant after saving the file.
+One sensor per task and 
 
 ---
 
-## 🔒 No Premium features used
+## No Premium features used
 
 This integration only uses features available in the free version of Flatastic because I do not have a subscription.
 
 ---
 
-## 🙏 Credits
+## Credits
 
 Inspired by and in some regard using code by:
 
@@ -82,9 +84,11 @@ Inspired by and in some regard using code by:
 
 ---
 
-## 📎 License
+## License
 
 MIT License – Free to use, modify, contribute
 
-This is my first integration. If you have some inputs, let me know! Remember that I am no professional and am doing this in my free time.
+---
+
+This is my first integration. If you have some inputs or ideas, let me know! Remember that I am no professional and am doing this in my free time. Enjoy!
 

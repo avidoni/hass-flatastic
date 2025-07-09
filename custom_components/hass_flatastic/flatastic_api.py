@@ -50,7 +50,11 @@ class FlatasticDataFetcher:
         self.cashflow = await self._fetch("cashflow")
         self.statistics = await self._fetch("cashflow_statistics")
         self.shopping = await self._fetch("shopping_list")
-
+        
+    @property
+    def currency(self):
+        return self.wg_info.get("currency", "€")
+    
     async def add_shopping_item(self, item_data):
         url = BASE_URL + API_ENDPOINTS["shopping_list"]
         try:
@@ -112,12 +116,13 @@ class FlatasticDataFetcher:
         return [t["title"] for t in tasks[:count] if "title" in t]
 
     def get_recent_cashflow(self, count=5):
+        currency = self.currency
         flows = sorted(self.cashflow, key=lambda x: x.get("date", 0), reverse=True)
         result = []
         for flow in flows[:count]:
             payer = self.get_user_by_id(flow["paidBy"])
             payer_name = payer["firstName"] if payer else "Unknown"
-            result.append(f"{payer_name} paid {flow['name']}: {flow['totalSum']} CHF")
+            result.append(f"{payer_name} paid {flow['name']}: {flow['totalSum']} {currency}")
         return result
     
     def get_shopping_list(self, include_data=False):
