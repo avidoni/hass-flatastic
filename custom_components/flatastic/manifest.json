@@ -1,6 +1,6 @@
 {
   "domain": "flatastic",
-  "name": "HASS Flatastic Integration",
+  "name": "Flatastic Integration",
   "version": "1.0.0",
   "documentation": "https://github.com/avidoni/hass-flatastic",
   "issue_tracker": "https://github.com/avidoni/hass-flatastic/issues",
@@ -10,6 +10,5 @@
   "config_flow": false,
   "iot_class": "cloud_polling",
   "integration_type": "integration",
-  "platforms": ["sensor", "todo"],
-  "brand": "flatastic"
+  "platforms": ["sensor", "todo"]
 }
