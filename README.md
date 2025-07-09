@@ -1,4 +1,4 @@
-<img src="https://github.com/avidoni/hass-flatastic/tree/main/images/flatastic.svg" alt="Flatastic Integration Logo" title="Flatastic" align="right" height="60" />
+<img src="https://github.com/avidoni/hass-flatastic/tree/main/images/flatastic.png" alt="Flatastic Integration Logo" title="Flatastic" align="right" height="60" />
 
 # Home Assistant Flatastic Integration
 
