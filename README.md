@@ -87,6 +87,8 @@ Inspired by and in some regard using code by:
 
 MIT License – Free to use, modify, contribute
 
+I have no association to Flatastic, this is a community made integration. This also means it might break at some point if Flatastic chooses to close certain API points.
+
 ---
 
 This is my first integration. If you have some inputs or ideas, let me know! Remember that I am no professional and am doing this in my free time. Enjoy!

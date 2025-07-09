@@ -1,6 +1,6 @@
 {
   "domain": "flatastic",
-  "name": "Flatastic Integration",
+  "name": "Flatastic",
   "version": "1.0.0",
   "documentation": "https://github.com/avidoni/hass-flatastic",
   "issue_tracker": "https://github.com/avidoni/hass-flatastic/issues",
