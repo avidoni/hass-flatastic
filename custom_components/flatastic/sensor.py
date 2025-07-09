@@ -90,10 +90,10 @@ class FlatasticUserSensor(Entity):
         balance = balance_entry.get("balance", 0.0)
 
         return {
-            "chorePoints": self._user.get("chorePoints", 0),
+            "chore_points": self._user.get("chorePoints", 0),
             "balance": f"{balance:.2f} {currency}",
-            "assignedTasks": task_titles,
-            "recentCashflow": flow_info,
+            "assigned_tasks": task_titles,
+            "recent_cashflow": flow_info,
         }
 
     async def async_update(self):
