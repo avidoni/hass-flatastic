@@ -20,7 +20,6 @@ PLATFORM_SCHEMA = vol.Schema({
 _LOGGER = logging.getLogger(__name__)
 
 
-
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     api_key = config.get("api_key")
     session = async_get_clientsession(hass)
@@ -37,6 +36,7 @@ class FlatasticShoppingListEntity(TodoListEntity):
         self._data_fetcher = data_fetcher
         self._attr_name = "Flatastic Shopping List"
         self._attr_unique_id = "flatastic_shopping_list"
+        self._attr_icon = "mdi:cart"
         self._attr_has_entity_name = True
         self._attr_supported_features = (
             TodoListEntityFeature.CREATE_TODO_ITEM |
@@ -64,7 +64,6 @@ class FlatasticShoppingListEntity(TodoListEntity):
                 _LOGGER.warning("Skipping item with empty summary: %s", item)
                 continue
             
-            # If bought == 0 => needs_action, else done
             status = "needs_action" if item.get("bought", 1) == 0 else "completed"
             items.append(TodoItem(summary=summary, uid=uid, status=status))
 
@@ -75,13 +74,12 @@ class FlatasticShoppingListEntity(TodoListEntity):
     
     async def async_create_todo_item(self, item: TodoItem) -> str:
         new_item = {
-            "name": item.summary,  # <-- change here from "itemName" to "name"
+            "name": item.summary,
             "amount": "1",
             "priority": 3,
             "bought": 0,
             "date": int(datetime.now().timestamp()),
         }
-
 
         created = await self._data_fetcher.add_shopping_item(new_item)
 
@@ -96,7 +94,6 @@ class FlatasticShoppingListEntity(TodoListEntity):
             _LOGGER.error(f"Failed to toggle shopping item with ID {item.uid}")
             return
 
-        # Refresh data and notify HA about changes
         await self.async_update()
         self.async_write_ha_state()
 
@@ -112,7 +109,6 @@ class FlatasticShoppingListEntity(TodoListEntity):
         for uid in uids:
             try:
                 await self.async_delete_todo_item(uid)
-                _LOGGER.debug("Deleted shopping item with ID %s", uid)
             except Exception as e:
                 _LOGGER.error("Failed to delete shopping item ID %s: %s", uid, e)
 

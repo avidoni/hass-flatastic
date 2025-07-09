@@ -34,7 +34,7 @@ class FlatasticUserSensor(Entity):
     def __init__(self, user_data, data_fetcher):
         self._user = user_data
         self._data_fetcher = data_fetcher
-        self._name = f"User {self._user['firstName']}"
+        self._name = f"Flatastic User {self._user['firstName']}"
         self._state = None
 
     @property
@@ -78,7 +78,7 @@ class FlatasticTaskSensor(Entity):
     def __init__(self, task_data, data_fetcher):
         self._task = task_data
         self._data_fetcher = data_fetcher
-        self._name = f"{self._task.get('title', 'Unknown')}"
+        self._name = f"Flatastic {self._task.get('title', 'Unknown')}"
         self._state = None
         self._attributes = {}
 
