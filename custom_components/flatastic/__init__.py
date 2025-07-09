@@ -1,7 +1,7 @@
 """Init file for Flatastic To-do"""
 from homeassistant.core import HomeAssistant
 
-DOMAIN = "hass-flatastic"
+DOMAIN = "flatastic"
 
 async def async_setup(hass: HomeAssistant, config: dict):
     return True

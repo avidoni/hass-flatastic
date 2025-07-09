@@ -1,5 +1,5 @@
 {
-  "domain": "hass-flatastic",
+  "domain": "flatastic",
   "name": "HASS Flatastic Integration",
   "version": "1.0.0",
   "documentation": "https://github.com/avidoni/hass-flatastic",

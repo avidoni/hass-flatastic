@@ -29,7 +29,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         await fetcher.update_all()
         async_add_entities([FlatasticShoppingListEntity(fetcher)], True)
     except Exception as e:
-        _LOGGER.error("Error setting up hass-flatastic todo: %s", e)
+        _LOGGER.error("Error setting up flatastic todo: %s", e)
 
 class FlatasticShoppingListEntity(TodoListEntity):
     def __init__(self, data_fetcher):
