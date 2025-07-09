@@ -65,7 +65,6 @@ todo:
 ````
 
 Restart Home Assistant after saving the file.
-One sensor per task and 
 
 ---
 
