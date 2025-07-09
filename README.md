@@ -66,7 +66,7 @@ todo:
     api_key: "your-x-api-key"
 ````
 
-** Restart Home Assistant after saving the file.!!! **
+** Restart Home Assistant after saving the file !!! **
 ---
 
 ## No Premium features used

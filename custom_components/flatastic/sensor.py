@@ -140,7 +140,7 @@ class FlatasticTaskSensor(Entity):
                 "title": task.get("title"),
                 "next_person": next_person,
                 "overdue": False,
-                "rotation_time": None,
+                "periodicity_days": None,
                 "points": int(task.get("points", 0)),
             }
         else:
@@ -153,7 +153,7 @@ class FlatasticTaskSensor(Entity):
                 "next_person": next_person,
                 "due_date": due_date.isoformat(),
                 "overdue": overdue,
-                "rotation_time": rotation_time_days,
+                "periodicity_days": rotation_time_days,
                 "points": int(task.get("points", 0)),
             }
 
