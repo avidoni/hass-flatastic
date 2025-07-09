@@ -3,7 +3,7 @@
 # Home Assistant Flatastic Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub Release](https://img.shields.io/github/v/release/antontanderup/mediocre-hass-media-player-cards?color=blue)](https://github.com/avidoni/hass-flatastic/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/avidoni/hass-flatastic?color=blue)](https://github.com/avidoni/hass-flatastic/releases)
 [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/avidoni/hass-flatastic/total)](https://github.com/avidoni/hass-flatastic/releases)
 
 
