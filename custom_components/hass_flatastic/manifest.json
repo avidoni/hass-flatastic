@@ -3,6 +3,7 @@
   "name": "HASS Flatastic Integration",
   "version": "1.0.0",
   "documentation": "https://github.com/avidoni/hass-flatastic",
+  "issue_tracker": "https://github.com/avidoni/hass-flatastic/issues",
   "requirements": [],
   "dependencies": [],
   "codeowners": ["@avidoni"],
