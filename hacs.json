@@ -1,9 +1,8 @@
 {
-  "name": "HASS Flatastic Integration",
+  "name": "Flatastic Integration",
   "domain": "flatastic",
   "country": "CH",
   "codeowners": ["@avidoni"],
   "homeassistant": "2025.7.1",
-  "persistent_directory": false,
-  "icon": "images/logo.png"
+  "persistent_directory": false
 }
